@@ -1,0 +1,27 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build demo video
+        uses: charmbracelet/vhs-action@v2
+        with:
+          path: lorem-ipsum-demo.tape
+
+      - name: Create GitHub release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: build/lorem-ipsum-demo.mp4
+          generate_release_notes: true
+          name: "vim demo ${{ github.ref_name }}"
