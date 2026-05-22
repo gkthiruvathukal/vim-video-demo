@@ -17,3 +17,4 @@ clean:
 
 brew-install:
 	brew install vhs ffmpeg
+	brew install --cask font-dejavu

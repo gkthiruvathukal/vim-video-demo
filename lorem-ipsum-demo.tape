@@ -3,6 +3,7 @@ Output build/lorem-ipsum-demo.mp4
 Set Width 1200
 Set Height 600
 Set FontSize 18
+Set FontFamily "DejaVu Sans Mono"
 Set TypingSpeed 120ms
 Set Theme "Dracula"
 
